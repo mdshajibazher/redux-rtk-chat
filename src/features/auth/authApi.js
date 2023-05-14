@@ -1,4 +1,5 @@
 import {apiSlice} from "../api/apiSlice";
+import {userLoggedIn} from "./authSlice";
 
 export const authApi = apiSlice.injectEndpoints({
 
@@ -8,7 +9,22 @@ export const authApi = apiSlice.injectEndpoints({
                 url: '/register',
                 method: "POST",
                 body: data
-            })
+            }),
+            async onQueryStarted(arg,{queryFulfilled,dispatch}){
+                try{
+                    const result = await queryFulfilled;
+                    let resultObject = {
+                        accessToken: result.data.accessToken,
+                        user: result.data.user,
+                    };
+                    localStorage.setItem("auth",JSON.stringify(resultObject))
+
+                    dispatch(userLoggedIn(resultObject))
+
+                }catch(err){
+
+                }
+            }
         }),
 
         login : builder.mutation({
@@ -19,8 +35,7 @@ export const authApi = apiSlice.injectEndpoints({
             })
         })
 
-
-
-
     })
 })
+
+export const {useLoginMutation, useRegisterMutation} = authApi;

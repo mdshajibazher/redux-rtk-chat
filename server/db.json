@@ -23,6 +23,18 @@
       "password": "$2a$10$Wrx04VezJvRYx0MAUN7yAeRSP1jHjnsKV0TPrD1SigOwGUf/8qnx6",
       "name": "shajib",
       "id": 4
+    },
+    {
+      "email": "mulu@mailinator.com",
+      "password": "$2a$10$34rS1eUn4BZjZ9lGWylGuOivrRiz2Xd5kdPHKiXtkYD/zvx8ozj42",
+      "name": "Eden Smith",
+      "id": 5
+    },
+    {
+      "email": "mdshajibazher@gmail.com",
+      "password": "$2a$10$tXnDBL3SYiHnfznzJxkD8OxjgJv4FsX1UGFT74XBoT.r/hDVxhuqe",
+      "name": "Md Pappu",
+      "id": 6
     }
   ],
   "conversations": [

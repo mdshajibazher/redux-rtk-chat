@@ -11,5 +11,5 @@ export const store = configureStore({
       conversations: conversationsSliceReducer,
       messages: messagesSliceReducer,
   },
-    middleware: (getDefaultMiddlewares) => {getDefaultMiddlewares().concat(apiSlice.middleware)}
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(apiSlice.middleware)
 });
