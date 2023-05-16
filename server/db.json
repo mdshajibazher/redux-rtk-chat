@@ -35,6 +35,12 @@
       "password": "$2a$10$tXnDBL3SYiHnfznzJxkD8OxjgJv4FsX1UGFT74XBoT.r/hDVxhuqe",
       "name": "Md Pappu",
       "id": 6
+    },
+    {
+      "email": "nycis@mailinator.com",
+      "password": "$2a$10$/agsC7cTn7JiLpw5KsSCXemb.UJqNVVtnmMn3XD38ULOcSRb8G8Da",
+      "name": "Blaine Obrien",
+      "id": 7
     }
   ],
   "conversations": [
