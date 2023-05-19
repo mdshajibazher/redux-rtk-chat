@@ -41,15 +41,33 @@
       "password": "$2a$10$/agsC7cTn7JiLpw5KsSCXemb.UJqNVVtnmMn3XD38ULOcSRb8G8Da",
       "name": "Blaine Obrien",
       "id": 7
+    },
+    {
+      "email": "zepebum@mailinator.com",
+      "password": "$2a$10$pmL35DP5zzaYIPOH8NU4H.2BNiL8YIzK6/7Y/M0qMQn/995hEk/1u",
+      "name": "Elmo Franks",
+      "id": 8
+    },
+    {
+      "email": "syqobyt@mailinator.com",
+      "password": "$2a$10$HRNbETM6/iupRyPPhuzBhuvmsvBugHPCv1LMMP6loOtd2BITEymJO",
+      "name": "Tanya Morse",
+      "id": 9
+    },
+    {
+      "email": "juxijogeq@mailinator.com",
+      "password": "$2a$10$SpXjKRd3CwfKdlL6/DNb3uSafBl0iqVPwz8x8WqwqvEp.m0zuvCTG",
+      "name": "Claudia Hansen",
+      "id": 10
     }
   ],
   "conversations": [
     {
       "id": 1,
-      "participants": "sumit@learnwithsumit.com-akash@learnwithsumit.com",
+      "participants": "juxijogeq@mailinator.com-akash@learnwithsumit.com",
       "users": [
         {
-          "email": "sumit@learnwithsumit.com",
+          "email": "juxijogeq@mailinator.com",
           "name": "Sumit Saha",
           "id": 1
         },
@@ -69,7 +87,7 @@
         {
           "email": "sumit@learnwithsumit.com",
           "name": "Sumit Saha",
-          "id": 1
+          "id": 10
         },
         {
           "email": "akash@learnwithsumit.com",
