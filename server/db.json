@@ -59,17 +59,29 @@
       "password": "$2a$10$SpXjKRd3CwfKdlL6/DNb3uSafBl0iqVPwz8x8WqwqvEp.m0zuvCTG",
       "name": "Claudia Hansen",
       "id": 10
+    },
+    {
+      "email": "gaxi@mailinator.com",
+      "password": "$2a$10$FDEY9m6xKbZNnq.vUjCpQOjtNfsvxx1hBTIglh7L/jkPYF5lAvd6i",
+      "name": "Leslie Dodson",
+      "id": 11
+    },
+    {
+      "email": "jyrar@mailinator.com",
+      "password": "$2a$10$MGzB.lQKIiev9xIZRYMEsOhxxuhU0fjxzehHEx.5GSVBJWlh6gaWi",
+      "name": "Noel Jennings",
+      "id": 12
     }
   ],
   "conversations": [
     {
       "id": 1,
-      "participants": "juxijogeq@mailinator.com-akash@learnwithsumit.com",
+      "participants": "jyrar@mailinator.com-akash@learnwithsumit.com",
       "users": [
         {
-          "email": "juxijogeq@mailinator.com",
-          "name": "Sumit Saha",
-          "id": 1
+          "email": "jyrar@mailinator.com",
+          "name": "Jyrar Saha",
+          "id": 12
         },
         {
           "email": "akash@learnwithsumit.com",
