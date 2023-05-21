@@ -30,6 +30,7 @@ export default function ChatItems() {
                 name={partner.name}
                 lastMessage={message}
                 lastTime={moment(timestamp).fromNow()}
+                id={conversation?.id}
             />
                 </li>
         })

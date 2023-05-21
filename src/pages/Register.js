@@ -21,7 +21,7 @@ export default function Register() {
         if(data?.accessToken && data?.user){
             navigate("/inbox");
         }
-    },[data,error,isError])
+    },[data,error,isError,navigate])
 
     const handleSubmit = (e) => {
         e.preventDefault();
