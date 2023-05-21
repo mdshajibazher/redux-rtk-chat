@@ -21,8 +21,7 @@ export default function ChatBody() {
         console.log('messages p',messages)
         content =  <>
             <ChatHead
-                avatar="https://cdn.pixabay.com/photo/2018/01/15/07/51/woman-3083383__340.jpg"
-                name="Akash Ahmed"
+               messages={messages[0]}
             />
             <Messages messages={messages} />
             <Options />
