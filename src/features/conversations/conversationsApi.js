@@ -1,4 +1,6 @@
 import {apiSlice} from "../api/apiSlice";
+import {messagesApi} from "../messages/messagesApi";
+import {data} from "autoprefixer";
 
 export const conversationsApi = apiSlice.injectEndpoints({
 
@@ -11,19 +13,52 @@ export const conversationsApi = apiSlice.injectEndpoints({
         }),
 
         addConversation: builder.mutation({
-            query: (data) => ({
+            query: ({sender, data}) => ({
                 url: '/conversations',
                 method: 'POST',
                 body: data
-            })
+            }),
+            async onQueryStarted(arg, {queryFulfilled, dispatch}){
+                const converasation = await queryFulfilled;
+                if(converasation?.data?.id){
+                    const users = arg.data.users;
+                    const senderUser = users.find(user => user.email === arg.sender)
+                    const receiverUser = users.find(user => user.email !== arg.sender)
+                    dispatch(messagesApi.endpoints.addMessage.initiate({
+                        conversationId: converasation?.data?.id,
+                        sender: senderUser,
+                        receiver: receiverUser,
+                        message: arg.data.message,
+                        timestamp: arg.data.timestamp
+                    }))
+                }
+            }
         }),
 
         editConversation: builder.mutation({
-            query: ({id, data}) => ({
+            query: ({id, sender,data}) => ({
                 url: `/conversations/${id}`,
                 method: 'PATCH',
                 body: data
-            })
+            }),
+
+            async onQueryStarted(arg, {queryFulfilled, dispatch}){
+                const converasation = await queryFulfilled;
+                console.log('converasation',converasation);
+                console.log('arg',arg);
+                if(converasation?.data?.id){
+                    const users = arg.data.users;
+                    const senderUser = users.find(user => user.email === arg.sender)
+                    const receiverUser = users.find(user => user.email !== arg.sender)
+                    dispatch(messagesApi.endpoints.addMessage.initiate({
+                        conversationId: converasation?.data?.id,
+                        sender: senderUser,
+                        receiver: receiverUser,
+                        message: arg.data.message,
+                        timestamp: arg.data.timestamp
+                    }))
+                }
+            }
         }),
     })
 })
