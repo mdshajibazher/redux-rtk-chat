@@ -21,10 +21,10 @@ export default function ChatItems() {
     }else if(!isLoading && !isError && conversations?.length === 0){
         content = <li className="m-2 text-center">No conversations found :)</li>
     }else if(!isLoading && !isError && conversations?.length > 0){
-        content = conversations.map(conversation => {
+        content = conversations.map((conversation,index) => {
             const {id, message, timestamp} = conversation;
             const partner = getPartnerInfo(conversation.users, email)
-            return   <li key={conversation?.id} className="m-2 text-center">
+            return   <li key={conversation?.id ? conversation?.id : 'a'+index} className="m-2 text-center">
                 <ChatItem
                 avatar={gravatarUrl(partner.email)}
                 name={partner.name}

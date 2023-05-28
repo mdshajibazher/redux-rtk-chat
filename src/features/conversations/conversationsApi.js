@@ -19,19 +19,36 @@ export const conversationsApi = apiSlice.injectEndpoints({
                 body: data
             }),
             async onQueryStarted(arg, {queryFulfilled, dispatch}){
-                const converasation = await queryFulfilled;
-                if(converasation?.data?.id){
-                    const users = arg.data.users;
-                    const senderUser = users.find(user => user.email === arg.sender)
-                    const receiverUser = users.find(user => user.email !== arg.sender)
-                    dispatch(messagesApi.endpoints.addMessage.initiate({
-                        conversationId: converasation?.data?.id,
-                        sender: senderUser,
-                        receiver: receiverUser,
-                        message: arg.data.message,
-                        timestamp: arg.data.timestamp
-                    }))
+
+                // Optimistic Cache update start
+                const pathResult2 = dispatch(apiSlice.util.updateQueryData('getConversations',arg.sender, (draft) => {
+                    draft.push(arg.data);
+                }));
+                // Optimistic Cache update end
+
+
+                try{
+                    const converasation = await queryFulfilled;
+                    if(converasation?.data?.id){
+                        const users = arg.data.users;
+                        const senderUser = users.find(user => user.email === arg.sender)
+                        const receiverUser = users.find(user => user.email !== arg.sender)
+                        const  res =  await  dispatch(messagesApi.endpoints.addMessage.initiate({
+                            conversationId: converasation?.data?.id,
+                            sender: senderUser,
+                            receiver: receiverUser,
+                            message: arg.data.message,
+                            timestamp: arg.data.timestamp
+                        })).unwrap()
+
+                        // update cache pessimistically start
+
+                        // update cache pessimistically end
+                    }
+                }catch (e){
+                    pathResult2.undo();
                 }
+
             }
         }),
 
@@ -44,8 +61,8 @@ export const conversationsApi = apiSlice.injectEndpoints({
 
             async onQueryStarted(arg, {queryFulfilled, dispatch}){
                 // Optimistic Cache update start
-
                 const pathResult1 = dispatch(apiSlice.util.updateQueryData('getConversations',arg.sender, (draft) => {
+                    console.log('draft',draft);
                     const draftConversation =  draft.find(c => c.id == arg.id);
                     draftConversation.message = arg.data.message;
                     draftConversation.timestamp = arg.data.timestamp;
@@ -59,13 +76,25 @@ export const conversationsApi = apiSlice.injectEndpoints({
                         const users = arg.data.users;
                         const senderUser = users.find(user => user.email === arg.sender)
                         const receiverUser = users.find(user => user.email !== arg.sender)
-                        dispatch(messagesApi.endpoints.addMessage.initiate({
+                        const  res = await dispatch(messagesApi.endpoints.addMessage.initiate({
                             conversationId: converasation?.data?.id,
                             sender: senderUser,
                             receiver: receiverUser,
                             message: arg.data.message,
                             timestamp: arg.data.timestamp
-                        }))
+                        })).unwrap()
+
+                        console.log('res.conversationId',res.conversationId)
+
+
+                        // update cache pessimistically start
+                        dispatch(apiSlice.util.updateQueryData('getMessages',res.conversationId.toString(), (draft) => {
+                            console.log('draft',draft)
+                                draft.push(res)
+                        }));
+                        // update cache pessimistically end
+
+
                     }
                 }catch (e){
                     pathResult1.undo();

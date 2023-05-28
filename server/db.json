@@ -81,7 +81,6 @@
   ],
   "conversations": [
     {
-      "id": 1,
       "participants": "mdshajibazher@gmail.com-akash@learnwithsumit.com",
       "users": [
         {
@@ -96,107 +95,13 @@
           "id": 2
         }
       ],
-      "message": "gfgsdfgfdgfds",
-      "timestamp": 1685244938448
-    },
-    {
-      "id": 2,
-      "participants": "mdshajibazher@gmail.com-saad@learnwithsumit.com",
-      "users": [
-        {
-          "email": "mdshajibazher@gmail.com",
-          "name": "Md Pappu",
-          "id": 6
-        },
-        {
-          "email": "akash@learnwithsumit.com",
-          "name": "Saad Hasan",
-          "id": 3
-        }
-      ],
-      "message": "How are you?",
-      "timestamp": 1661976143678
-    },
-    {
-      "participants": "fonoba@mailinator.com-mdshajibazher@gmail.com",
-      "users": [
-        {
-          "email": "fonoba@mailinator.com",
-          "name": "Amal Mccall",
-          "id": 13
-        },
-        {
-          "email": "mdshajibazher@gmail.com",
-          "password": "$2a$12$3eN24eI/uHgTgNHJHjeD5OK6.TkhDBsCPDM7cciRlE4o1x1R6U.Wq",
-          "name": "Md Pappu",
-          "id": 6
-        }
-      ],
-      "message": "bbbbbbb",
-      "timestamp": 1684983964672,
-      "id": 3
-    },
-    {
-      "participants": "fonoba@mailinator.com-akash@learnwithsumit.com",
-      "users": [
-        {
-          "email": "fonoba@mailinator.com",
-          "name": "Amal Mccall",
-          "id": 13
-        },
-        {
-          "email": "akash@learnwithsumit.com",
-          "password": "$2a$10$CtHS.yCGS80jiuZx8yKEI.5zdiZykHF/6aPTDqpHl6ZqEFGISOHKO",
-          "name": "Akash Ahmed",
-          "id": 2
-        }
-      ],
-      "message": "fdasfsf",
-      "timestamp": 1684983996753,
-      "id": 4
-    },
-    {
-      "participants": "mdshajibazher@gmail.com-sumit@learnwithsumit.com",
-      "users": [
-        {
-          "email": "mdshajibazher@gmail.com",
-          "name": "Md Pappu",
-          "id": 6
-        },
-        {
-          "email": "sumit@learnwithsumit.com",
-          "password": "$2a$10$CtHS.yCGS80jiuZx8yKEI.5zdiZykHF/6aPTDqpHl6ZqEFGISOHKO",
-          "name": "Sumit Saha",
-          "id": 1
-        }
-      ],
-      "message": "Hello Sir",
-      "timestamp": 1685072817873,
-      "id": 5
-    },
-    {
-      "participants": "mdshajibazher@gmail.com-sumit@learnwithsumit.com",
-      "users": [
-        {
-          "email": "mdshajibazher@gmail.com",
-          "name": "Md Pappu",
-          "id": 6
-        },
-        {
-          "email": "sumit@learnwithsumit.com",
-          "password": "$2a$10$CtHS.yCGS80jiuZx8yKEI.5zdiZykHF/6aPTDqpHl6ZqEFGISOHKO",
-          "name": "Sumit Saha",
-          "id": 1
-        }
-      ],
-      "message": "tp",
-      "timestamp": 1685244809721,
-      "id": 6
+      "message": "Lorem",
+      "timestamp": 1685253466003,
+      "id": 1
     }
   ],
   "messages": [
     {
-      "id": 1,
       "conversationId": 1,
       "sender": {
         "email": "mdshajibazher@gmail.com",
@@ -205,43 +110,13 @@
       },
       "receiver": {
         "email": "akash@learnwithsumit.com",
+        "password": "$2a$10$CtHS.yCGS80jiuZx8yKEI.5zdiZykHF/6aPTDqpHl6ZqEFGISOHKO",
         "name": "Akash Ahmed",
         "id": 2
       },
-      "message": "Hello",
-      "timestamp": 1661976143557
-    },
-    {
-      "id": 2,
-      "conversationId": 1,
-      "sender": {
-        "email": "akash@learnwithsumit.com",
-        "name": "Akash Ahmed",
-        "id": 2
-      },
-      "receiver": {
-        "email": "sumit@learnwithsumit.com",
-        "name": "Sumit Saha",
-        "id": 1
-      },
-      "message": "How are you?",
-      "timestamp": 1661976143678
-    },
-    {
-      "id": 3,
-      "conversationId": 2,
-      "sender": {
-        "email": "saad@learnwithsumit.com",
-        "name": "Saad Hasan",
-        "id": 3
-      },
-      "receiver": {
-        "email": "mdshajibazher@gmail.com",
-        "name": "Md Pappu",
-        "id": 6
-      },
-      "message": "How are you 2?",
-      "timestamp": 1661976143678
+      "message": "fsdfsdfdsf",
+      "timestamp": 1685252116748,
+      "id": 1
     },
     {
       "conversationId": 1,
@@ -256,76 +131,110 @@
         "name": "Akash Ahmed",
         "id": 2
       },
-      "message": "lorem ipsum",
-      "timestamp": 1685072501824,
+      "message": "fsdfdasf",
+      "timestamp": 1685252868577,
+      "id": 2
+    },
+    {
+      "conversationId": 1,
+      "sender": {
+        "email": "mdshajibazher@gmail.com",
+        "name": "Md Pappu",
+        "id": 6
+      },
+      "receiver": {
+        "email": "akash@learnwithsumit.com",
+        "password": "$2a$10$CtHS.yCGS80jiuZx8yKEI.5zdiZykHF/6aPTDqpHl6ZqEFGISOHKO",
+        "name": "Akash Ahmed",
+        "id": 2
+      },
+      "message": "fsdfdas",
+      "timestamp": 1685252886248,
+      "id": 3
+    },
+    {
+      "conversationId": 1,
+      "sender": {
+        "email": "mdshajibazher@gmail.com",
+        "name": "Md Pappu",
+        "id": 6
+      },
+      "receiver": {
+        "email": "akash@learnwithsumit.com",
+        "password": "$2a$10$CtHS.yCGS80jiuZx8yKEI.5zdiZykHF/6aPTDqpHl6ZqEFGISOHKO",
+        "name": "Akash Ahmed",
+        "id": 2
+      },
+      "message": "Another World",
+      "timestamp": 1685253179494,
       "id": 4
     },
     {
-      "conversationId": 5,
+      "conversationId": 1,
       "sender": {
         "email": "mdshajibazher@gmail.com",
         "name": "Md Pappu",
         "id": 6
       },
       "receiver": {
-        "email": "sumit@learnwithsumit.com",
+        "email": "akash@learnwithsumit.com",
         "password": "$2a$10$CtHS.yCGS80jiuZx8yKEI.5zdiZykHF/6aPTDqpHl6ZqEFGISOHKO",
-        "name": "Sumit Saha",
-        "id": 1
+        "name": "Akash Ahmed",
+        "id": 2
       },
-      "message": "Hello Sir",
-      "timestamp": 1685072817873,
+      "message": "fdsfsdfsf",
+      "timestamp": 1685253390475,
       "id": 5
     },
     {
-      "conversationId": 6,
+      "conversationId": 1,
       "sender": {
         "email": "mdshajibazher@gmail.com",
         "name": "Md Pappu",
         "id": 6
       },
       "receiver": {
-        "email": "sumit@learnwithsumit.com",
+        "email": "akash@learnwithsumit.com",
         "password": "$2a$10$CtHS.yCGS80jiuZx8yKEI.5zdiZykHF/6aPTDqpHl6ZqEFGISOHKO",
-        "name": "Sumit Saha",
-        "id": 1
+        "name": "Akash Ahmed",
+        "id": 2
       },
-      "message": "Hello World",
-      "timestamp": 1685166022012,
+      "message": "fsdfds",
+      "timestamp": 1685253407271,
       "id": 6
     },
     {
-      "conversationId": 6,
+      "conversationId": 1,
       "sender": {
         "email": "mdshajibazher@gmail.com",
         "name": "Md Pappu",
         "id": 6
       },
       "receiver": {
-        "email": "sumit@learnwithsumit.com",
+        "email": "akash@learnwithsumit.com",
         "password": "$2a$10$CtHS.yCGS80jiuZx8yKEI.5zdiZykHF/6aPTDqpHl6ZqEFGISOHKO",
-        "name": "Sumit Saha",
-        "id": 1
+        "name": "Akash Ahmed",
+        "id": 2
       },
-      "message": "Lorem Ipsum",
-      "timestamp": 1685166711159,
+      "message": "fsdfdsfd",
+      "timestamp": 1685253428346,
       "id": 7
     },
     {
-      "conversationId": 6,
+      "conversationId": 1,
       "sender": {
         "email": "mdshajibazher@gmail.com",
         "name": "Md Pappu",
         "id": 6
       },
       "receiver": {
-        "email": "sumit@learnwithsumit.com",
+        "email": "akash@learnwithsumit.com",
         "password": "$2a$10$CtHS.yCGS80jiuZx8yKEI.5zdiZykHF/6aPTDqpHl6ZqEFGISOHKO",
-        "name": "Sumit Saha",
-        "id": 1
+        "name": "Akash Ahmed",
+        "id": 2
       },
-      "message": "tp",
-      "timestamp": 1685244809721,
+      "message": "fsdfs",
+      "timestamp": 1685253442833,
       "id": 8
     },
     {
@@ -341,8 +250,8 @@
         "name": "Akash Ahmed",
         "id": 2
       },
-      "message": "gfgsdfgfdgfds",
-      "timestamp": 1685244938448,
+      "message": "Lorem",
+      "timestamp": 1685253466003,
       "id": 9
     }
   ]
