@@ -43,21 +43,34 @@ export const conversationsApi = apiSlice.injectEndpoints({
             }),
 
             async onQueryStarted(arg, {queryFulfilled, dispatch}){
-                const converasation = await queryFulfilled;
-                console.log('converasation',converasation);
-                console.log('arg',arg);
-                if(converasation?.data?.id){
-                    const users = arg.data.users;
-                    const senderUser = users.find(user => user.email === arg.sender)
-                    const receiverUser = users.find(user => user.email !== arg.sender)
-                    dispatch(messagesApi.endpoints.addMessage.initiate({
-                        conversationId: converasation?.data?.id,
-                        sender: senderUser,
-                        receiver: receiverUser,
-                        message: arg.data.message,
-                        timestamp: arg.data.timestamp
-                    }))
+                // Optimistic Cache update start
+
+                const pathResult1 = dispatch(apiSlice.util.updateQueryData('getConversations',arg.sender, (draft) => {
+                    const draftConversation =  draft.find(c => c.id == arg.id);
+                    draftConversation.message = arg.data.message;
+                    draftConversation.timestamp = arg.data.timestamp;
+                }));
+                // Optimistic Cache update end
+
+
+                try{
+                    const converasation = await queryFulfilled;
+                    if(converasation?.data?.id){
+                        const users = arg.data.users;
+                        const senderUser = users.find(user => user.email === arg.sender)
+                        const receiverUser = users.find(user => user.email !== arg.sender)
+                        dispatch(messagesApi.endpoints.addMessage.initiate({
+                            conversationId: converasation?.data?.id,
+                            sender: senderUser,
+                            receiver: receiverUser,
+                            message: arg.data.message,
+                            timestamp: arg.data.timestamp
+                        }))
+                    }
+                }catch (e){
+                    pathResult1.undo();
                 }
+
             }
         }),
     })
