@@ -7,6 +7,25 @@ const server = http.createServer(app);
 const io = require('socket.io')(server);
 global.io = io;
 const router = jsonServer.router("db.json");
+
+router.render = (req, res) => {
+    const path = req.path;
+    const method = req.method;
+    if(path.includes('/conversations') && (method === 'POST' || method === 'PATCH')){
+        io.emit('conversations',{
+            data: res.locals.data
+        })
+    }
+
+    if(path.includes('/messages') && (method === 'POST' || method === 'PATCH')){
+        io.emit('messages',{
+            data: res.locals.data
+        })
+    }
+    res.json(res.locals.data)
+}
+
+
 const middlewares = jsonServer.defaults();
 const port = process.env.PORT || 9000;
 
