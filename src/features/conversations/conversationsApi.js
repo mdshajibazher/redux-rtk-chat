@@ -10,6 +10,7 @@ export const conversationsApi = apiSlice.injectEndpoints({
             ,async onCacheEntryAdded(arg, {
                 updateCachedData, cacheDataLoaded, cacheEntryRemoved
             }){
+
                 const socket = io('http://localhost:9000',{
                     reconnectionDelay: 1000,
                     reconnection: true,
@@ -29,13 +30,15 @@ export const conversationsApi = apiSlice.injectEndpoints({
                                 conversations.message = data?.data?.message
                                 conversations.timestamp = data?.data?.timestamp
                             }else{
-                                //
+                                console.log('else')
                             }
                         })
                     })
                 }catch (e) {
-                    
+                    console.log('e',e)
                 }
+                await cacheEntryRemoved;
+                socket.close();
             }
         }),
         getConversation: builder.query({
